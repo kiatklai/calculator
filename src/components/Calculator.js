@@ -15,6 +15,11 @@ const Calculator=()=>{
     setInputValue("0")
   }
 
+  const calculate =()=>{
+    let result = eval(inputValue)
+    setInputValue(result)
+  }
+
   return(
     <div className="calculator">
       <div className="calculator-display">
@@ -37,7 +42,7 @@ const Calculator=()=>{
         <button onClick={()=>display(".")}>.</button>
         <button onClick={()=>display("0")}>0</button>
         <button className="clear-btn" onClick={reset}>C</button>
-        <button className="equal operator">=</button>
+        <button className="equal operator" onClick={calculate}>=</button>
       </div>
     </div>
   )
